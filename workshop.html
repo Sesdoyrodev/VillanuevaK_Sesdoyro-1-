@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop | Clay Charm</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="index.html"><img class="logo" src="images/logo.png" alt="Clay Charm logo"></a>
+    <input class="search" type="search" placeholder="⌕   Search...">
+    <button class="menu-btn" id="menuButton" aria-label="Open menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About us</a>
+      <a href="shop.html">Shop</a>
+      <a href="workshop.html" class="active">Workshop</a>
+      <a href="login.html">log in</a>
+    </nav>
+  </div>
+
+  <button class="sound-toggle" id="soundToggle" type="button" aria-label="Toggle sound">🔊 Sound On</button>
+  <audio id="clickSound" src="click.wav" preload="auto"></audio>
+</header>
+
+
+<main>
+<section class="page-banner"><div class="container"><h1>Workshop</h1><p>Create your own cute clay charm.</p></div></section>
+<section class="content container">
+  <div class="content-box">
+    <h2>Custom Charm Workshop</h2>
+    <p>Tell us what you want to create. Choose your colors, character, pet, or favorite design.</p>
+    <form>
+      <div><label for="name">Name</label><input id="name" type="text" required placeholder="Your name"></div>
+      <div><label for="idea">Charm idea</label><textarea id="idea" required placeholder="Describe your custom charm..."></textarea></div>
+      <div><label for="style">Preferred style</label><select id="style"><option>Chibi</option><option>Realistic</option><option>Simple / Cute</option></select></div>
+      <div><label for="reference">Reference Image (Optional)</label><input id="reference" type="file" accept="image/*"></div>
+      <button class="btn" type="submit">Send Workshop Request</button>
+    </form>
+  </div>
+</section>
+</main>
+
+
+<footer>
+  <p>Handmade • Custom • Cute — Clay Charms made with love.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
