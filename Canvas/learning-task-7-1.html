@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Task 7.1 - HTML5 Canvas Art</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #1e293b;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      max-width: 960px;
+      margin: 0 auto 2rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+
+    .back-btn {
+      text-decoration: none;
+      background-color: #1e293b;
+      color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+
+    .grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    canvas {
+      width: 200px;
+      height: 200px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Learning Task 7.1: 8 HTML5 Canvas Graphics</h1>
+
+  </header>
+
+  <main class="grid">
+    <div class="card">
+      <canvas id="art1" width="200" height="200"></canvas>
+      <span>1. Sun & Cloud</span>
+    </div>
+
+    <div class="card">
+      <canvas id="art2" width="200" height="200"></canvas>
+      <span>2. Crescent & Stars</span>
+    </div>
+
+    <div class="card">
+      <canvas id="art3" width="200" height="200"></canvas>
+      <span>3. Potted Sprout</span>
+    </div>
+
+    <div class="card">
+      <canvas id="art4" width="200" height="200"></canvas>
+      <span>4. Sailboat</span>
+    </div>
+
+    <div class="card">
+      <canvas id="art5" width="200" height="200"></canvas>
+      <span>5. Mountain Peak</span>
+    </div>
+
+    <div class="card">
+      <canvas id="art6" width="200" height="200"></canvas>
+      <span>6. Sealed Letter</span>
+    </div>
+
+    <div class="card">
+      <canvas id="art7" width="200" height="200"></canvas>
+      <span>7. Concentric Target</span>
+    </div>
+
+    <div class="card">
+      <canvas id="art8" width="200" height="200"></canvas>
+      <span>8. Rainbow Arch</span>
+    </div>
+  </main>
+
+  <script>
+    // 1. Sun & Cloud
+    (() => {
+      const ctx = document.getElementById('art1').getContext('2d');
+      ctx.fillStyle = '#facc15';
+      ctx.beginPath();
+      ctx.arc(135, 68, 28, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#e2e8f0';
+      ctx.beginPath();
+      ctx.arc(72, 122, 22, 0, Math.PI * 2);
+      ctx.arc(98, 110, 28, 0, Math.PI * 2);
+      ctx.arc(128, 122, 22, 0, Math.PI * 2);
+      ctx.fillRect(72, 120, 56, 24);
+      ctx.fill();
+    })();
+
+    // 2. Crescent & Stars
+    (() => {
+      const ctx = document.getElementById('art2').getContext('2d');
+      ctx.fillStyle = '#0f172a';
+      ctx.fillRect(20, 20, 160, 160);
+
+      ctx.fillStyle = '#fde047';
+      ctx.beginPath();
+      ctx.arc(96, 100, 42, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#0f172a';
+      ctx.beginPath();
+      ctx.arc(112, 90, 36, 0, Math.PI * 2);
+      ctx.fill();
+
+      const stars = [[55, 55, 3], [148, 52, 2.5], [145, 138, 3]];
+      ctx.fillStyle = '#fef08a';
+      stars.forEach(([x, y, r]) => {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    })();
+
+    // 3. Potted Sprout
+    (() => {
+      const ctx = document.getElementById('art3').getContext('2d');
+      ctx.strokeStyle = '#16a34a';
+      ctx.lineWidth = 5;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(100, 120);
+      ctx.quadraticCurveTo(102, 85, 100, 62);
+      ctx.stroke();
+
+      ctx.fillStyle = '#22c55e';
+      ctx.beginPath();
+      ctx.ellipse(80, 74, 20, 11, -0.4, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.ellipse(120, 74, 20, 11, 0.4, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#ea580c';
+      ctx.beginPath();
+      ctx.moveTo(64, 120);
+      ctx.lineTo(136, 120);
+      ctx.lineTo(126, 165);
+      ctx.lineTo(74, 165);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = '#c2410c';
+      ctx.fillRect(60, 112, 80, 10);
+    })();
+
+    // 4. Sailboat
+    (() => {
+      const ctx = document.getElementById('art4').getContext('2d');
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 4;
+      ctx.beginPath();
+      ctx.moveTo(100, 42);
+      ctx.lineTo(100, 135);
+      ctx.stroke();
+
+      ctx.fillStyle = '#38bdf8';
+      ctx.beginPath();
+      ctx.moveTo(104, 48);
+      ctx.lineTo(148, 128);
+      ctx.lineTo(104, 128);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = '#f43f5e';
+      ctx.beginPath();
+      ctx.moveTo(96, 62);
+      ctx.lineTo(56, 128);
+      ctx.lineTo(96, 128);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = '#1e293b';
+      ctx.beginPath();
+      ctx.moveTo(45, 135);
+      ctx.lineTo(155, 135);
+      ctx.lineTo(138, 158);
+      ctx.lineTo(62, 158);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.strokeStyle = '#0284c7';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.moveTo(25, 168);
+      ctx.quadraticCurveTo(62, 158, 100, 168);
+      ctx.quadraticCurveTo(138, 178, 175, 168);
+      ctx.stroke();
+    })();
+
+    // 5. Mountain Peak
+    (() => {
+      const ctx = document.getElementById('art5').getContext('2d');
+      ctx.fillStyle = '#fb923c';
+      ctx.beginPath();
+      ctx.arc(148, 55, 20, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#475569';
+      ctx.beginPath();
+      ctx.moveTo(25, 160);
+      ctx.lineTo(95, 58);
+      ctx.lineTo(165, 160);
+      ctx.closePath();
+      ctx.fill();
+
+      ctx.fillStyle = '#f8fafc';
+      ctx.beginPath();
+      ctx.moveTo(95, 58);
+      ctx.lineTo(116, 90);
+      ctx.lineTo(103, 85);
+      ctx.lineTo(95, 96);
+      ctx.lineTo(87, 85);
+      ctx.lineTo(74, 90);
+      ctx.closePath();
+      ctx.fill();
+    })();
+
+    // 6. Sealed Letter
+    (() => {
+      const ctx = document.getElementById('art6').getContext('2d');
+      ctx.fillStyle = '#fef3c7';
+      ctx.strokeStyle = '#d97706';
+      ctx.lineWidth = 3;
+      ctx.fillRect(35, 58, 130, 86);
+      ctx.strokeRect(35, 58, 130, 86);
+
+      ctx.beginPath();
+      ctx.moveTo(35, 58);
+      ctx.lineTo(100, 106);
+      ctx.lineTo(165, 58);
+      ctx.stroke();
+
+      ctx.fillStyle = '#e11d48';
+      ctx.beginPath();
+      ctx.arc(100, 106, 10, 0, Math.PI * 2);
+      ctx.fill();
+    })();
+
+    // 7. Concentric Target
+    (() => {
+      const ctx = document.getElementById('art7').getContext('2d');
+      const rings = [
+        [68, '#ef4444'],
+        [52, '#ffffff'],
+        [36, '#ef4444'],
+        [20, '#ffffff'],
+        [9, '#2563eb']
+      ];
+      rings.forEach(([r, color]) => {
+        ctx.fillStyle = color;
+        ctx.beginPath();
+        ctx.arc(100, 100, r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    })();
+
+    // 8. Rainbow Arch
+    (() => {
+      const ctx = document.getElementById('art8').getContext('2d');
+      const bands = [
+        [66, '#ef4444'],
+        [58, '#f97316'],
+        [50, '#eab308'],
+        [42, '#22c55e'],
+        [34, '#3b82f6']
+      ];
+      ctx.lineWidth = 8;
+      bands.forEach(([r, color]) => {
+        ctx.strokeStyle = color;
+        ctx.beginPath();
+        ctx.arc(100, 145, r, Math.PI, 0);
+        ctx.stroke();
+      });
+    })();
+  </script>
+
+</body>
+</html>
