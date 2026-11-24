@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning Task 6.1 - God Will Make a Way</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    svg {
+      width: 900px;
+      height: 780px;
+      max-width: 100%;
+      background-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <svg width="900" height="780" viewBox="0 0 900 780" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Path defining the heart symbol shape -->
+      <path id="heart-shape-path"
+            d="M 450 695
+               C 210 520, 135 320, 240 175
+               C 315 75, 415 115, 450 215
+               C 485 115, 585 75, 660 175
+               C 765 320, 690 520, 450 695 Z" />
+
+      <!-- Clip path to shape the stacked lyric lines tightly into the heart -->
+      <clipPath id="heart-text-clip">
+        <use href="#heart-shape-path" />
+      </clipPath>
+    </defs>
+
+    <!-- Invisible/unfilled path symbol reference -->
+    <use href="#heart-shape-path" fill="none" />
+
+    <!-- Compact stacked text shaped into a heart -->
+    <g clip-path="url(#heart-text-clip)" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" fill="#111827">
+      <text x="450" y="148" font-size="22" font-weight="700" letter-spacing="1">He works in ways we cannot see</text>
+      <text x="450" y="176" font-size="24" font-weight="700">God will make a way where there seems to be no way</text>
+      <text x="450" y="205" font-size="20" font-weight="600">He will be my guide • Hold me closely to His heart</text>
+      <text x="450" y="233" font-size="22" font-weight="700">With a love and strength for each new day</text>
+      <text x="450" y="261" font-size="21" font-weight="600">He will make a way • He will make a way</text>
+      <text x="450" y="289" font-size="23" font-weight="700">By a roadway in the wilderness He'll lead me</text>
+      <text x="450" y="317" font-size="20" font-weight="600">And rivers in the desert will I see</text>
+      <text x="450" y="345" font-size="24" font-weight="700">Heaven and earth will fade, His word will still remain</text>
+      <text x="450" y="373" font-size="21" font-weight="600">He will do something new today</text>
+      <text x="450" y="401" font-size="25" font-weight="700">GOD WILL MAKE A WAY</text>
+      <text x="450" y="429" font-size="20" font-weight="600">Even when the path is dim and hard to trace</text>
+      <text x="450" y="457" font-size="22" font-weight="700">Grace and mercy meet me in every place</text>
+      <text x="450" y="485" font-size="20" font-weight="600">A way will be there • He leads me on</text>
+      <text x="450" y="513" font-size="21" font-weight="700">Strength for today and hope for tomorrow</text>
+      <text x="450" y="541" font-size="19" font-weight="600">He guides every step through joy and sorrow</text>
+      <text x="450" y="569" font-size="20" font-weight="700">Trusting in His promise day by day</text>
+      <text x="450" y="597" font-size="19" font-weight="600">Faithful and true in every way</text>
+      <text x="450" y="625" font-size="18" font-weight="700">He will make a way</text>
+      <text x="450" y="652" font-size="17" font-weight="600">Always a way</text>
+      <text x="450" y="678" font-size="16" font-weight="700">Amen</text>
+    </g>
+  </svg>
+
+</body>
+</html>
